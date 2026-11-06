@@ -1,0 +1,1598 @@
+/* ============================================================================
+   DJANGUI FINTECH UI — PREMIUM 3D & IMMERSIVE DESIGN SYSTEM (CLAIR & SOMBRE)
+   Direction Artistique : Bleu Nuit Profond, Vert Émeraude, Blanc/Gris & Or Subtil
+   Architecture 100% Native CSS3 — Perspective 3D, Scroll Animations & Micro-UI
+   ============================================================================ */
+
+:root,
+[data-theme="light"] {
+    /* Palette Fondamentale — Mode Clair Apaisant & Haut de Gamme */
+    --dj-bg-body: #eef3f9;
+    --dj-bg-body-grad:
+        radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.08) 0%, transparent 42%),
+        radial-gradient(circle at 88% 18%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 92%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, #ecf2fb 0%, #f4f7fc 55%, #eef7f4 100%);
+    --dj-bg-surface: rgba(255, 255, 255, 0.92);
+    --dj-bg-surface-solid: #ffffff;
+    --dj-bg-glass: rgba(255, 255, 255, 0.78);
+    --dj-bg-subtle: #e7eef8;
+    --dj-bg-input: #f8fafc;
+    --dj-bg-sidebar: linear-gradient(180deg, #0b1120 0%, #0f172a 58%, #0c1f24 100%);
+    --dj-sidebar-text: #f8fafc;
+    --dj-sidebar-muted: #94a3b8;
+    --dj-sidebar-border: rgba(148, 163, 184, 0.14);
+    --dj-sidebar-card: rgba(255, 255, 255, 0.06);
+    --dj-sidebar-hover: rgba(16, 185, 129, 0.14);
+
+    /* Typographie & Contrastes */
+    --dj-text-main: #0b1120;
+    --dj-text-muted: #52637a;
+    --dj-border: rgba(15, 23, 42, 0.10);
+    --dj-border-strong: rgba(37, 99, 235, 0.25);
+
+    /* Couleurs Identitaires Djangui : Bleu Nuit, Émeraude & Or Financier */
+    --dj-navy-deep: #070c18;
+    --dj-navy: #0f172a;
+    --dj-primary: #1d4ed8;
+    --dj-primary-bright: #2563eb;
+    --dj-primary-hover: #1e40af;
+    --dj-emerald: #059669;
+    --dj-emerald-bright: #10b981;
+    --dj-emerald-hover: #047857;
+    --dj-gold: #d97706;
+    --dj-gold-metallic: #d4af37;
+    --dj-gold-soft: rgba(212, 175, 55, 0.15);
+    --dj-gold-border: rgba(212, 175, 55, 0.38);
+    --dj-warning: #d97706;
+    --dj-danger: #dc2626;
+
+    /* Ombres Multicouches & Profondeur 3D */
+    --dj-shadow-sm: 0 2px 8px -2px rgba(11, 17, 32, 0.06);
+    --dj-shadow:
+        0 10px 30px -6px rgba(11, 17, 32, 0.07),
+        0 4px 12px -2px rgba(11, 17, 32, 0.04),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    --dj-shadow-hover:
+        0 22px 44px -10px rgba(29, 78, 216, 0.16),
+        0 8px 20px -4px rgba(5, 150, 105, 0.10),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+    --dj-shadow-3d:
+        0 28px 60px -12px rgba(11, 17, 32, 0.18),
+        0 12px 24px -6px rgba(29, 78, 216, 0.12);
+
+    /* Surfaces Accentuées & En-têtes */
+    --dj-accent-grad: linear-gradient(135deg, rgba(230, 240, 255, 0.92) 0%, rgba(244, 249, 255, 0.96) 50%, rgba(226, 250, 239, 0.92) 100%);
+    --dj-accent-border: rgba(37, 99, 235, 0.24);
+    --dj-header-grad: linear-gradient(135deg, #070c18 0%, #0f172a 48%, #064e3b 100%);
+    --dj-header-text: #f8fafc;
+    --dj-header-muted: #cbd5e1;
+    --dj-hero-grad: linear-gradient(135deg, #050914 0%, #0f172a 52%, #064e3b 100%);
+    --dj-row-highlight: rgba(37, 99, 235, 0.075);
+    --dj-row-hover: rgba(16, 185, 129, 0.045);
+    --dj-glare-color: rgba(255, 255, 255, 0.55);
+}
+
+[data-theme="dark"] {
+    /* Palette Fondamentale — Mode Sombre Bleu Nuit Profond & Émeraude */
+    --dj-bg-body: #060a14;
+    --dj-bg-body-grad:
+        radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
+        linear-gradient(180deg, #050912 0%, #0b1120 55%, #07121e 100%);
+    --dj-bg-surface: rgba(17, 25, 42, 0.88);
+    --dj-bg-surface-solid: #11192a;
+    --dj-bg-glass: rgba(15, 23, 42, 0.75);
+    --dj-bg-subtle: #182338;
+    --dj-bg-input: #0b1221;
+    --dj-bg-sidebar: linear-gradient(180deg, #050912 0%, #0b1120 65%, #07191e 100%);
+    --dj-sidebar-text: #f8fafc;
+    --dj-sidebar-muted: #94a3b8;
+    --dj-sidebar-border: rgba(148, 163, 184, 0.12);
+    --dj-sidebar-card: rgba(255, 255, 255, 0.04);
+    --dj-sidebar-hover: rgba(16, 185, 129, 0.15);
+
+    /* Typographie & Contrastes */
+    --dj-text-main: #f1f5f9;
+    --dj-text-muted: #94a3b8;
+    --dj-border: rgba(148, 163, 184, 0.15);
+    --dj-border-strong: rgba(59, 130, 246, 0.38);
+
+    /* Couleurs Identitaires */
+    --dj-navy-deep: #030712;
+    --dj-navy: #0f172a;
+    --dj-primary: #3b82f6;
+    --dj-primary-bright: #60a5fa;
+    --dj-primary-hover: #60a5fa;
+    --dj-emerald: #10b981;
+    --dj-emerald-bright: #34d399;
+    --dj-emerald-hover: #34d399;
+    --dj-gold: #fbbf24;
+    --dj-gold-metallic: #eab308;
+    --dj-gold-soft: rgba(234, 179, 8, 0.16);
+    --dj-gold-border: rgba(234, 179, 8, 0.42);
+    --dj-warning: #fbbf24;
+    --dj-danger: #f87171;
+
+    /* Ombres Multicouches & Profondeur 3D */
+    --dj-shadow-sm: 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+    --dj-shadow:
+        0 14px 34px -6px rgba(0, 0, 0, 0.55),
+        0 4px 12px -2px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+    --dj-shadow-hover:
+        0 24px 48px -8px rgba(0, 0, 0, 0.68),
+        0 0 28px -4px rgba(59, 130, 246, 0.25),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    --dj-shadow-3d:
+        0 30px 65px -12px rgba(0, 0, 0, 0.75),
+        0 0 35px -6px rgba(16, 185, 129, 0.22);
+
+    /* Surfaces Accentuées & En-têtes */
+    --dj-accent-grad: linear-gradient(135deg, rgba(30, 58, 138, 0.42) 0%, rgba(15, 23, 42, 0.78) 52%, rgba(6, 95, 70, 0.40) 100%);
+    --dj-accent-border: rgba(59, 130, 246, 0.34);
+    --dj-header-grad: linear-gradient(135deg, #030712 0%, #0f172a 55%, #064e3b 100%);
+    --dj-header-text: #f8fafc;
+    --dj-header-muted: #cbd5e1;
+    --dj-hero-grad: linear-gradient(135deg, #02050d 0%, #0b1329 55%, #053b2c 100%);
+    --dj-row-highlight: rgba(59, 130, 246, 0.16);
+    --dj-row-hover: rgba(16, 185, 129, 0.07);
+    --dj-glare-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================================
+   BASE, SCROLLBAR & TYPOGRAPHIE FINTECH
+   ============================================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--dj-bg-body-grad);
+    background-color: var(--dj-bg-body);
+    background-attachment: fixed;
+    color: var(--dj-text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.25s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Barre de progression de lecture au scroll en haut de l'écran */
+.dj-scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    z-index: 10000;
+    background: linear-gradient(90deg, #2563eb 0%, #10b981 65%, #d4af37 100%);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.55);
+    pointer-events: none;
+    transition: width 0.08s linear;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    letter-spacing: -0.022em;
+}
+
+.fs-3, .fs-4, .fs-5, .display-5, .display-6, .dj-tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
+
+.text-adaptive {
+    color: var(--dj-text-main) !important;
+}
+
+.text-muted {
+    color: var(--dj-text-muted) !important;
+}
+
+.text-gold {
+    color: var(--dj-gold-metallic) !important;
+}
+
+code {
+    color: var(--dj-primary);
+    background: var(--dj-bg-subtle);
+    padding: 0.18rem 0.48rem;
+    border-radius: 7px;
+    font-weight: 600;
+    border: 1px solid var(--dj-border);
+}
+
+/* ============================================================================
+   LAYOUT APPLICATION CONNECTÉE (SIDEBAR FIXE PREMIUM + CONTENU PRINCIPAL)
+   ============================================================================ */
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.app-sidebar {
+    width: 272px;
+    background: var(--dj-bg-sidebar);
+    color: var(--dj-sidebar-text);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    border-right: 1px solid var(--dj-sidebar-border);
+    padding: 1.35rem 1.05rem;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.22);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    overflow-y: auto;
+}
+
+/* Lueur décorative subtile dans la sidebar */
+.app-sidebar::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .app-main--with-sidebar {
+        margin-left: 272px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .app-sidebar {
+        display: none !important;
+    }
+    body {
+        padding-bottom: 78px;
+    }
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--dj-sidebar-text) !important;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.28rem;
+    letter-spacing: -0.03em;
+    padding: 0.45rem 0.65rem;
+    margin-bottom: 1.15rem;
+    position: relative;
+}
+
+.sidebar-brand-sub {
+    display: block;
+    color: var(--dj-sidebar-muted);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+}
+
+.sidebar-brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1d4ed8 0%, #059669 75%, #d4af37 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.22rem;
+    box-shadow:
+        0 6px 16px rgba(16, 185, 129, 0.32),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+
+.sidebar-brand:hover .sidebar-brand-icon,
+.navbar-brand:hover .sidebar-brand-icon {
+    transform: rotateY(18deg) rotateX(-10deg) scale(1.07);
+    box-shadow: 0 10px 22px rgba(16, 185, 129, 0.45);
+}
+
+.sidebar-profile-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 0.95rem 1.05rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar-profile-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #10b981, #d4af37);
+}
+
+.sidebar-profile-label {
+    font-size: 0.67rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--dj-sidebar-muted);
+}
+
+.sidebar-profile-title {
+    font-weight: 700;
+    color: var(--dj-sidebar-text);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.78rem 1rem;
+    border-radius: 13px;
+    color: var(--dj-sidebar-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-link i {
+    font-size: 1.15rem;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sidebar-link:hover {
+    color: #ffffff;
+    background: var(--dj-sidebar-hover);
+    transform: translateX(4px);
+}
+
+.sidebar-link:hover i {
+    transform: scale(1.14);
+    color: #34d399;
+}
+
+.sidebar-link.active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #2563eb 0%, #059669 100%);
+    box-shadow:
+        0 8px 20px -4px rgba(16, 185, 129, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.sidebar-link.active i {
+    color: #fde68a;
+}
+
+.sidebar-footer {
+    padding-top: 1rem;
+    margin-top: auto;
+    border-top: 1px solid var(--dj-sidebar-border);
+}
+
+.app-sidebar .btn-theme-toggle {
+    background: rgba(255, 255, 255, 0.07);
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.app-sidebar .btn-theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: #34d399;
+}
+
+/* ============================================================================
+   TOPBAR COMPACTE D'APPLICATION & NAVBAR PUBLIQUE GLASSMORPHISM
+   ============================================================================ */
+.app-topbar {
+    background: var(--dj-bg-glass);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--dj-border);
+    padding: 0.8rem 1.35rem;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    box-shadow: var(--dj-shadow-sm);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-public,
+.navbar-djangui {
+    background: var(--dj-bg-glass);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--dj-border);
+    box-shadow: var(--dj-shadow-sm);
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+[data-theme="dark"] .navbar-public,
+[data-theme="dark"] .navbar-djangui {
+    background: rgba(11, 17, 32, 0.84);
+    border-bottom: 1px solid var(--dj-border);
+}
+
+.navbar-public .navbar-brand {
+    color: var(--dj-text-main) !important;
+    letter-spacing: -0.03em;
+}
+
+/* ============================================================================
+   HERO VIDÉO + SCÈNE 3D INTERACTIVE SUR LA PAGE D'ACCUEIL (index.php)
+   ============================================================================ */
+.hero-video-section {
+    position: relative;
+    min-height: 86vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--dj-hero-grad);
+    color: #ffffff;
+    padding: 4.5rem 0 5rem 0;
+    perspective: 1200px;
+}
+
+.hero-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.55;
+    transform: scale(1.03);
+    transition: transform 0.6s ease-out;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 75% 45%, rgba(16, 185, 129, 0.24) 0%, transparent 50%),
+        radial-gradient(circle at 25% 30%, rgba(37, 99, 235, 0.28) 0%, transparent 52%),
+        linear-gradient(125deg, rgba(4, 8, 20, 0.90) 0%, rgba(11, 19, 40, 0.80) 52%, rgba(6, 68, 52, 0.78) 100%);
+    backdrop-filter: blur(3px);
+    z-index: 2;
+}
+
+/* Canvas 3D plein écran en surimpression subtile dans le Hero */
+.dj-hero-3d-canvas-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.dj-hero-3d-canvas-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+.hero-video-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Vitrine 3D interactive du Hero (colonne droite ou scène centrale) */
+.dj-hero-3d-stage {
+    position: relative;
+    width: 100%;
+    min-height: 370px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.65) 0%, rgba(6, 78, 59, 0.38) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow:
+        0 30px 60px -15px rgba(0, 0, 0, 0.65),
+        0 0 40px -10px rgba(16, 185, 129, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    transform-style: preserve-3d;
+}
+
+.dj-hero-3d-stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1;
+    pointer-events: auto;
+    cursor: grab;
+}
+
+.dj-hero-3d-stage canvas:active {
+    cursor: grabbing;
+}
+
+.dj-hero-stage-hud {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.dj-floating-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(212, 175, 55, 0.42);
+    color: #f8fafc;
+    font-size: 0.78rem;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    animation: djFloatSlow 4.5s ease-in-out infinite;
+}
+
+.dj-floating-chip--emerald {
+    border-color: rgba(16, 185, 129, 0.5);
+    animation-delay: -2.2s;
+}
+
+@keyframes djFloatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+}
+
+/* ============================================================================
+   SCÈNES 3D EMBARQUÉES (DASHBOARD, AUTH, EN-TÊTES & STICKY STORYTELLING)
+   ============================================================================ */
+.dj-3d-widget-box {
+    position: relative;
+    width: 118px;
+    height: 118px;
+    border-radius: 20px;
+    background: radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.18), rgba(37, 99, 235, 0.08) 70%);
+    border: 1px solid var(--dj-gold-border);
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.12), var(--dj-shadow-sm);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.dj-3d-widget-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Sticky Reveal Section (Scrollytelling sur l'accueil) */
+.dj-sticky-narrative {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .dj-sticky-visual-col {
+        position: sticky;
+        top: 105px;
+        z-index: 5;
+    }
+}
+
+.dj-solidarity-3d-card {
+    position: relative;
+    min-height: 410px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #070d1d 0%, #0f172a 55%, #063e31 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: var(--dj-shadow-3d);
+    color: #ffffff;
+    overflow: hidden;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dj-solidarity-3d-card canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1;
+}
+
+.dj-solidarity-overlay-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ============================================================================
+   STEPPER DE PARCOURS GUIDÉ (4 ÉTAPES — PROFONDEUR & ÉTAT LUMINEUX)
+   ============================================================================ */
+.stepper-djangui {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.85rem;
+    perspective: 1000px;
+}
+
+@media (max-width: 767.98px) {
+    .stepper-djangui {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .stepper-djangui {
+        grid-template-columns: 1fr;
+    }
+}
+
+.step-item {
+    background: var(--dj-bg-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--dj-border);
+    border-radius: 16px;
+    padding: 0.95rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--dj-text-main) !important;
+    box-shadow: var(--dj-shadow-sm);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-4px) rotateX(3deg);
+    box-shadow: var(--dj-shadow-hover);
+    border-color: var(--dj-primary);
+}
+
+.step-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--dj-text-main) !important;
+}
+
+.step-item.step-done {
+    border-color: rgba(16, 185, 129, 0.45);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.09) 0%, var(--dj-bg-surface) 100%);
+}
+
+.step-item.step-active {
+    border: 2px solid var(--dj-primary);
+    box-shadow: var(--dj-shadow-hover);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.09) 0%, var(--dj-bg-surface) 100%);
+}
+
+.step-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    background: var(--dj-bg-subtle);
+    color: var(--dj-text-muted);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover .step-circle {
+    transform: scale(1.08);
+}
+
+.step-done .step-circle {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+.step-active .step-circle {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+/* ============================================================================
+   CARTES PREMIUM 3D, REFLETS DYNAMIQUES, BORDURES LUMINEUSES & BOUTONS
+   ============================================================================ */
+.card-djangui {
+    background: var(--dj-bg-surface);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--dj-border);
+    border-radius: 18px;
+    box-shadow: var(--dj-shadow);
+    color: var(--dj-text-main);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.card-accent-djangui {
+    background: var(--dj-accent-grad);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--dj-accent-border);
+    border-radius: 20px;
+    box-shadow: var(--dj-shadow);
+    color: var(--dj-text-main);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+/* Reflet lumineux dynamique suivant le curseur sur les cartes */
+.card-djangui::before,
+.card-accent-djangui::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        520px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+        var(--dj-glare-color),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.card-djangui:hover::before,
+.card-accent-djangui:hover::before {
+    opacity: 1;
+}
+
+.card-djangui > *,
+.card-accent-djangui > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hover-lift {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--dj-shadow-hover);
+    border-color: var(--dj-border-strong);
+}
+
+/* Inclinaison 3D interactive pilotée par JS */
+.js-tilt-3d {
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+.box-adaptive {
+    background-color: var(--dj-bg-subtle) !important;
+    border: 1px solid var(--dj-border) !important;
+    color: var(--dj-text-main) !important;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.box-adaptive:hover {
+    border-color: rgba(37, 99, 235, 0.28) !important;
+}
+
+.surface-chip-djangui {
+    background-color: var(--dj-bg-surface-solid) !important;
+    border: 1px solid var(--dj-border) !important;
+    color: var(--dj-text-main) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.surface-chip-djangui:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--dj-shadow-sm);
+    border-color: var(--dj-primary) !important;
+}
+
+.border-left-navy    { border-left: 5px solid var(--dj-primary) !important; }
+.border-left-emerald { border-left: 5px solid var(--dj-emerald) !important; }
+.border-left-warning { border-left: 5px solid var(--dj-warning) !important; }
+.border-left-danger  { border-left: 5px solid var(--dj-danger) !important; }
+.border-left-gold    { border-left: 5px solid var(--dj-gold-metallic) !important; }
+
+/* Boutons d'action FinTech avec reflet spéculaire et élévation 3D */
+.btn-glow-blue {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 60%, #1e3a8a 100%);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 11px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 6px 18px -2px rgba(37, 99, 235, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-glow-blue::after,
+.btn-glow-emerald::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.28),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: left 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.btn-glow-blue:hover::after,
+.btn-glow-emerald:hover::after {
+    left: 125%;
+}
+
+.btn-glow-blue:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 24px -4px rgba(37, 99, 235, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+.btn-glow-blue:active,
+.btn-glow-emerald:active {
+    transform: translateY(0px) scale(0.98);
+}
+
+.btn-glow-emerald {
+    background: linear-gradient(135deg, #10b981 0%, #059669 65%, #047857 100%);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 11px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 6px 18px -2px rgba(16, 185, 129, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-glow-emerald:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 24px -4px rgba(16, 185, 129, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+.btn-theme-toggle {
+    background: var(--dj-bg-subtle);
+    color: var(--dj-text-main) !important;
+    border: 1px solid var(--dj-border);
+    border-radius: 999px;
+    padding: 0.42rem 0.95rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-theme-toggle:hover {
+    border-color: var(--dj-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--dj-shadow-sm);
+}
+
+/* Barre de progression FinTech enrichie avec lueur émeraude & or */
+.progress {
+    background-color: var(--dj-bg-subtle);
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--dj-border);
+}
+
+.progress-bar.bg-success {
+    background: linear-gradient(90deg, #059669 0%, #10b981 70%, #d4af37 100%) !important;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.45);
+    position: relative;
+    transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Onglets modernes type Pilules FinTech */
+.nav-pills-djangui {
+    background: var(--dj-bg-subtle);
+    padding: 0.38rem;
+    border-radius: 14px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    border: 1px solid var(--dj-border);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.nav-pills-djangui .nav-link {
+    border-radius: 10px;
+    color: var(--dj-text-muted);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.08rem;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-pills-djangui .nav-link:hover {
+    color: var(--dj-text-main);
+    transform: translateY(-1px);
+}
+
+.nav-pills-djangui .nav-link.active {
+    background: var(--dj-bg-surface-solid);
+    color: var(--dj-primary);
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.10),
+        0 0 0 1px rgba(37, 99, 235, 0.16);
+}
+
+/* Animation fluide de changement d'onglet */
+.tab-pane.fade {
+    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(8px);
+}
+
+.tab-pane.fade.show.active {
+    transform: translateY(0);
+}
+
+/* ============================================================================
+   TABLEAUX DE TRANSACTIONS & COTISATIONS (PROFONDEUR & MICRO-INTERACTIONS)
+   ============================================================================ */
+.table-djangui {
+    --bs-table-bg: transparent !important;
+    --bs-table-color: var(--dj-text-main) !important;
+    --bs-table-border-color: var(--dj-border) !important;
+    color: var(--dj-text-main) !important;
+}
+
+.table-djangui thead th {
+    background-color: var(--dj-bg-subtle) !important;
+    color: var(--dj-text-muted) !important;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.055em;
+    font-weight: 700;
+    border-bottom: 1px solid var(--dj-border) !important;
+    padding: 0.9rem 0.85rem;
+}
+
+.table-djangui thead th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table-djangui thead th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.table-djangui tbody tr {
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table-djangui tbody td {
+    padding: 0.95rem 0.85rem;
+    border-bottom: 1px solid var(--dj-border) !important;
+    color: var(--dj-text-main) !important;
+    background-color: transparent !important;
+    transition: background-color 0.2s ease;
+}
+
+.table-djangui tbody tr:hover td {
+    background-color: var(--dj-row-hover) !important;
+}
+
+.row-highlight-djangui td {
+    background-color: var(--dj-row-highlight) !important;
+}
+
+.tfoot-djangui td,
+.tfoot-djangui th {
+    background-color: var(--dj-bg-subtle) !important;
+    color: var(--dj-text-main) !important;
+    border-top: 2px solid var(--dj-border) !important;
+    padding: 0.95rem 0.85rem;
+}
+
+/* ============================================================================
+   CHAMPS DE FORMULAIRE, MODALES 3D & MENUS DÉROULANTS
+   ============================================================================ */
+.form-control,
+.form-select {
+    background-color: var(--dj-bg-input) !important;
+    border: 1px solid var(--dj-border) !important;
+    color: var(--dj-text-main) !important;
+    border-radius: 11px;
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: var(--dj-text-muted) !important;
+    opacity: 0.72;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--dj-bg-surface-solid) !important;
+    border-color: var(--dj-primary) !important;
+    color: var(--dj-text-main) !important;
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.15),
+        0 4px 12px rgba(37, 99, 235, 0.08) !important;
+}
+
+.input-group-text {
+    background-color: var(--dj-bg-subtle) !important;
+    border: 1px solid var(--dj-border) !important;
+    color: var(--dj-text-main) !important;
+    border-radius: 11px;
+}
+
+/* Fenêtres modales avec profondeur 3D et flou d'arrière-plan */
+.modal-backdrop.show {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0.65;
+}
+
+.modal.fade .modal-dialog {
+    transform: perspective(1000px) rotateX(8deg) translateY(24px) scale(0.95);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal.show .modal-dialog {
+    transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
+}
+
+.modal-content {
+    background-color: var(--dj-bg-surface-solid) !important;
+    color: var(--dj-text-main) !important;
+    border: 1px solid var(--dj-border-strong) !important;
+    border-radius: 20px;
+    box-shadow: var(--dj-shadow-3d);
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(16, 185, 129, 0.06));
+    border-color: var(--dj-border) !important;
+}
+
+.modal-footer {
+    border-color: var(--dj-border) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--dj-bg-surface-solid) !important;
+    border: 1px solid var(--dj-border-strong) !important;
+    color: var(--dj-text-main) !important;
+    border-radius: 16px;
+    box-shadow: var(--dj-shadow-3d) !important;
+    animation: djDropdownIn 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes djDropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dropdown-item {
+    color: var(--dj-text-main) !important;
+    transition: all 0.18s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--dj-bg-subtle) !important;
+    color: var(--dj-primary) !important;
+    transform: translateX(3px);
+}
+
+/* Alertes & Notifications Flash avec animation d'entrée */
+.alert {
+    border-radius: 14px;
+    border-width: 1px;
+    animation: djAlertReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes djAlertReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ============================================================================
+   BARRE MOBILE FIXE EN BAS (4 ONGLETS D'APPLICATION — GLASSMORPHISM)
+   ============================================================================ */
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    background: var(--dj-bg-glass);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid var(--dj-border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1040;
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-bottom-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--dj-text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    gap: 2px;
+    padding: 0.35rem 0;
+    position: relative;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-bottom-nav a i {
+    font-size: 1.25rem;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mobile-bottom-nav a.active {
+    color: var(--dj-primary);
+}
+
+.mobile-bottom-nav a.active i {
+    transform: translateY(-2px) scale(1.12);
+}
+
+.mobile-bottom-nav a.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 28px;
+    height: 3px;
+    border-radius: 0 0 4px 4px;
+    background: linear-gradient(90deg, #2563eb, #10b981);
+}
+
+/* ============================================================================
+   BANDEAUX D'EN-TÊTE IMMERSIFS AVEC SCÈNE 3D DÉCORATIVE (.page-header-dark)
+   ============================================================================ */
+.page-header-dark {
+    position: relative;
+    background: var(--dj-header-grad);
+    color: var(--dj-header-text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.8rem 0;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.page-header-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 80% 50%, rgba(16, 185, 129, 0.20) 0%, transparent 45%);
+    pointer-events: none;
+}
+
+.page-header-dark .container {
+    position: relative;
+    z-index: 2;
+}
+
+.dj-header-3d-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.page-header-dark h1,
+.page-header-dark h2 {
+    color: var(--dj-header-text) !important;
+}
+
+.page-header-dark p,
+.page-header-dark .text-muted {
+    color: var(--dj-header-muted) !important;
+}
+
+.footer-djangui {
+    background: var(--dj-bg-surface);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--dj-border);
+}
+
+/* ============================================================================
+   MOTEUR DES 10 CATÉGORIES DE SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+   1. Fade In Up        (data-dj-reveal="fade-up")
+   2. Fade In Left      (data-dj-reveal="fade-left")
+   3. Fade In Right     (data-dj-reveal="fade-right")
+   4. Scale Reveal      (data-dj-reveal="scale")
+   5. Blur Reveal       (data-dj-reveal="blur")
+   6. Stagger Animation (data-dj-stagger + --dj-stagger-delay)
+   7. Parallax Scroll   (data-dj-parallax)
+   8. Sticky Reveal     (.dj-sticky-reveal)
+   9. Number Counter    (data-dj-counter)
+   10. 3D Tilt Reveal   (data-dj-reveal="tilt-3d")
+   ============================================================================ */
+[data-dj-reveal] {
+    opacity: 0;
+    will-change: transform, opacity, filter;
+    transition:
+        opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.78s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--dj-stagger-delay, 0ms);
+}
+
+/* 1. Fade In Up */
+[data-dj-reveal="fade-up"] {
+    transform: translate3d(0, 34px, 0);
+}
+
+/* 2. Fade In Left */
+[data-dj-reveal="fade-left"] {
+    transform: translate3d(-40px, 0, 0);
+}
+
+/* 3. Fade In Right */
+[data-dj-reveal="fade-right"] {
+    transform: translate3d(40px, 0, 0);
+}
+
+/* 4. Scale Reveal */
+[data-dj-reveal="scale"] {
+    transform: scale(0.88) translate3d(0, 18px, 0);
+}
+
+/* 5. Blur Reveal */
+[data-dj-reveal="blur"] {
+    filter: blur(12px);
+    transform: translate3d(0, 20px, 0) scale(0.97);
+}
+
+/* 10. 3D Tilt Reveal */
+[data-dj-reveal="tilt-3d"] {
+    transform: perspective(1100px) rotateX(15deg) rotateY(-6deg) translate3d(0, 36px, -30px);
+    transform-origin: center top;
+}
+
+/* État visible déclenché par IntersectionObserver */
+[data-dj-reveal].is-revealed {
+    opacity: 1 !important;
+    transform: perspective(1100px) rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+}
+
+/* Respect strict de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    [data-dj-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+    .dj-floating-chip,
+    .sidebar-brand-icon,
+    .hover-lift {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media print {
+    .no-print,
+    .app-sidebar,
+    .app-topbar,
+    .mobile-bottom-nav,
+    .footer-djangui,
+    .dj-scroll-progress-bar,
+    .dj-3d-widget-box,
+    .dj-header-3d-canvas {
+        display: none !important;
+    }
+    .app-main--with-sidebar {
+        margin-left: 0 !important;
+    }
+    [data-dj-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}
+
+
+/* ============================================================================
+   ANIMATIONS TYPOGRAPHIQUES PREMIUM — TYPEWRITER, TEXT CYCLING & TEXT REVEAL
+   ============================================================================ */
+
+/* Conteneur stable anti-décalage (Zero Layout Shift) */
+.dj-typewriter-box {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    min-height: 1.55em;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.dj-typewriter-box--block {
+    display: flex;
+    align-items: center;
+    min-height: 1.75em;
+    width: 100%;
+}
+
+.dj-typewriter-hero-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 1.05rem;
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.62);
+    border: 1px solid rgba(16, 185, 129, 0.36);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 26px -6px rgba(0, 0, 0, 0.35);
+    min-height: 2.65rem;
+    max-width: 100%;
+}
+
+.dj-typewriter-context-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.48rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: var(--dj-bg-subtle);
+    border: 1px solid var(--dj-border);
+    color: var(--dj-text-main);
+    font-size: 0.84rem;
+    font-weight: 600;
+    min-height: 2.05rem;
+    max-width: 100%;
+}
+
+[data-theme="dark"] .dj-typewriter-context-pill {
+    background: rgba(15, 23, 42, 0.72);
+    border-color: rgba(16, 185, 129, 0.28);
+}
+
+.dj-typewriter-text {
+    display: inline;
+    transition: filter 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1), transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dj-typewriter-text--emerald {
+    color: #34d399;
+    font-weight: 700;
+}
+
+[data-theme="light"] .dj-typewriter-context-pill .dj-typewriter-text--emerald {
+    color: #059669;
+}
+
+/* Effet d'effacement avec Blur Out ou entrée Fade In Up */
+.dj-typewriter-text.is-blurring-out {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-6px);
+}
+
+.dj-typewriter-text.is-fading-in {
+    animation: djTextFadeInUp 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes djTextFadeInUp {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(9px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+/* Curseur vertical clignotant Vert Émeraude (zéro décalage de texte) */
+.dj-typewriter-cursor {
+    display: inline-block;
+    width: 2.5px;
+    height: 1.08em;
+    background-color: #10b981;
+    box-shadow: 0 0 9px rgba(16, 185, 129, 0.65);
+    margin-left: 3px;
+    vertical-align: -0.15em;
+    border-radius: 2px;
+    pointer-events: none;
+    user-select: none;
+    animation: djCursorBlink 0.95s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pendant la frappe active ou l'effacement, le curseur reste franc et lumineux */
+.dj-typewriter-cursor.is-active-typing {
+    animation: none;
+    opacity: 1;
+    background-color: #34d399;
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.85);
+}
+
+.dj-typewriter-cursor.is-hidden {
+    opacity: 0 !important;
+    animation: none !important;
+}
+
+@keyframes djCursorBlink {
+    0%, 46% { opacity: 1; }
+    50%, 96% { opacity: 0.08; }
+    100% { opacity: 1; }
+}
+
+/* Variantes Text Reveal : Lettre par lettre, Mot par mot, Masque */
+.dj-reveal-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.32em);
+    filter: blur(3px);
+    transition:
+        opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--char-delay, 0ms);
+}
+
+.dj-reveal-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.48em);
+    filter: blur(4px);
+    transition:
+        opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.58s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--word-delay, 0ms);
+}
+
+.dj-reveal-mask-wrap {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.06em;
+}
+
+.dj-reveal-mask-inner {
+    display: inline-block;
+    transform: translateY(106%);
+    opacity: 0;
+    transition:
+        transform 0.68s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.55s ease;
+    transition-delay: var(--mask-delay, 0ms);
+}
+
+.is-text-revealed .dj-reveal-char,
+.is-text-revealed .dj-reveal-word {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.is-text-revealed .dj-reveal-mask-inner {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Accessibilité : prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .dj-typewriter-cursor {
+        animation: none !important;
+        opacity: 0.85;
+    }
+    .dj-reveal-char,
+    .dj-reveal-word,
+    .dj-reveal-mask-inner,
+    .dj-typewriter-text {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
